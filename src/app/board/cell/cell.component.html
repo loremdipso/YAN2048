@@ -1,1 +1,10 @@
-{{ cell.value }}
+<div
+  class="container"
+  [ngClass]="{
+    tile: !!cell.value,
+    'tile-new': cell.shouldAppear,
+    'tile-merged': cell.wasMerged
+  }"
+>
+  {{ cell.value || "" }}
+</div>

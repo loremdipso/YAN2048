@@ -1,21 +1,42 @@
-.container {
+:host {
+  width: min(100vw, 100vh);
+  height: min(100vw, 100vh);
+  //   height: 100vh;
   display: flex;
   flex-direction: column;
 
   .center-region {
     display: flex;
+    flex-grow: 1;
   }
 
   .cell-container {
+    flex-grow: 1;
     background-color: blue;
-    width: 500px;
-    height: 500px;
+    // width: 500px;
+    // height: 500px;
 
     display: grid;
-    grid-template-columns: auto auto auto auto;
+
+    $thing: minmax(0, 1fr);
+    grid-template-columns: $thing $thing $thing $thing;
+    grid-template-rows: $thing $thing $thing $thing;
 
     $gap: 10px;
     padding: $gap;
     gap: $gap;
+
+    &::before {
+      content: "";
+      width: 0;
+      padding-bottom: 100%;
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+    }
+
+    > *:first-child {
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+    }
   }
 }
