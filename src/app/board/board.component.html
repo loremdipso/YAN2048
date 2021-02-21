@@ -1,0 +1,15 @@
+<div class="container">
+  <button (click)="moveUp()">up</button>
+
+  <div class="center-region">
+    <button (click)="moveLeft()">{{ "<" }}</button>
+
+    <div class="cell-container">
+      <app-cell *ngFor="let cell of cells" [cell]="cell"></app-cell>
+    </div>
+
+    <button (click)="moveRight()">></button>
+  </div>
+
+  <button (click)="moveDown()">down</button>
+</div>
