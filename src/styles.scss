@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: #0074d9;
 }
 
 .tile-new {
@@ -35,6 +35,11 @@ body {
   }
 }
 
-* {
+:not(button) {
   overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

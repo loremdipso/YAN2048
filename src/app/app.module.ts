@@ -9,6 +9,7 @@ import { CellComponent } from './board/cell/cell.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import * as Hammer from 'hammerjs';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -33,6 +34,7 @@ export class HammerConfig extends HammerGestureConfig {
 		MatDialogModule,
 		MatButtonModule,
 		BrowserAnimationsModule,
+		MatIconModule,
 	],
 	providers: [{
 		provide: HAMMER_GESTURE_CONFIG,

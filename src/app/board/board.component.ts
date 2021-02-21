@@ -26,11 +26,18 @@ export class BoardComponent implements OnInit {
 			this.cells.push(new Cell());
 		}
 
-		this.addRandomCell();
+		for (let i = 0; i < 4; i++) {
+			this.addRandomCell();
+		}
 	}
 
 	half() {
-		console.log("TODO: half");
+		let num_to_remove = (NUM_COLS * NUM_ROWS) / 2;
+		shuffle(this.cells);
+		for (let i = 0; i < num_to_remove; i++) {
+			this.cells[i].value = 0;
+		}
+		shuffle(this.cells);
 	}
 
 	ngOnInit(): void {
@@ -268,4 +275,24 @@ function randomElement<T>(elements: T[]): T {
 	return elements[Math.floor(Math.random() * elements.length)];
 }
 
+function shuffle<T>(array: T[]) {
+	let currentIndex = array.length;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+
+		// Pick a remaining element...
+		let randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		let temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+}
+
 const DEFAULT_VALUES = [2, 4];
+

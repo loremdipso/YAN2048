@@ -1,7 +1,6 @@
 :host {
   width: min(100vw, 100vh);
   height: min(100vw, 100vh);
-  //   height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -12,9 +11,7 @@
 
   .cell-container {
     flex-grow: 1;
-    background-color: blue;
-    // width: 500px;
-    // height: 500px;
+    background-color: #28528f;
 
     display: grid;
 
@@ -37,6 +34,26 @@
     > *:first-child {
       grid-row: 1 / 1;
       grid-column: 1 / 1;
+    }
+  }
+}
+
+:host {
+  ::ng-deep {
+    .movement-button {
+      padding: 0;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 32px;
+      min-width: 0;
+
+      border-radius: 0;
+
+      background-color: black;
+
+      mat-icon {
+        color: white;
+      }
     }
   }
 }

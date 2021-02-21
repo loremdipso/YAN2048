@@ -1,13 +1,21 @@
-<button (click)="moveUp()">up</button>
+<button (click)="moveUp()" mat-flat-button class="movement-button">
+  <mat-icon>expand_less</mat-icon>
+</button>
 
 <div class="center-region">
-  <button (click)="moveLeft()">{{ "<" }}</button>
+  <button (click)="moveLeft()" mat-flat-button class="movement-button">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
 
   <div class="cell-container">
     <app-cell *ngFor="let cell of cells" [cell]="cell"></app-cell>
   </div>
 
-  <button (click)="moveRight()">></button>
+  <button (click)="moveRight()" mat-flat-button class="movement-button">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
 </div>
 
-<button (click)="moveDown()">down</button>
+<button (click)="moveDown()" mat-flat-button class="movement-button">
+  <mat-icon>expand_more</mat-icon>
+</button>

@@ -3,8 +3,10 @@
   [ngClass]="{
     tile: !!cell.value,
     'tile-new': cell.shouldAppear,
-    'tile-merged': cell.wasMerged
+    'tile-merged': cell.wasMerged,
+    'four-digits': cell.value >= 1000
   }"
+  [ngStyle]="{ 'background-color': myColor }"
 >
   {{ cell.value || "" }}
 </div>
